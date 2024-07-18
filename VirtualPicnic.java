@@ -1,5 +1,6 @@
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -17,7 +18,7 @@ public class VirtualPicnic {
             
             while (scanner.hasNext()) {
                 String word = scanner.next();
-                count_word = + 1;
+                count_word ++;
 
                 if (word.length() > longestWord.length()) {
                     longestWord = word;
@@ -27,6 +28,15 @@ public class VirtualPicnic {
             }
             System.out.println("Количество слов в файле: " + count_word);
             System.out.println("Самое длинное слово: " + longestWord);
+
+            System.out.println("Частота повторения слов: ");
+            for (Map.Entry<String, Integer> entry : wordFrequency.entrySet()) {
+                System.out.println(entry.getKey() + ": " + entry.getValue());
+            }
+
+            scanner.close();
+        } catch (FileNotFoundException e ) {
+            System.err.println("Файл не найден.");
         }
         
     }
