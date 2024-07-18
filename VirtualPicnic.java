@@ -33,8 +33,8 @@ public class VirtualPicnic {
             for (Map.Entry<String, Integer> entry : wordFrequency.entrySet()) {
                 System.out.println(entry.getKey() + ": " + entry.getValue());
             }
-
             scanner.close();
+            
         } catch (FileNotFoundException e ) {
             System.err.println("Файл не найден.");
         }
